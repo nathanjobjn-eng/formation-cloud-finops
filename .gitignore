@@ -1,0 +1,11 @@
+# Interdire l'envoi des clés et fichiers d'état Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+*.lock.hcl
+terraform.tfvars
+rootkey.csv
+*.tfvars
+# Interdire les fichiers d'historique de commandes contenant des secrets
+.history/
+.terraform.tfstate.backup
