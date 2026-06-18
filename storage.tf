@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "boite_cv" {
-    bucket = "cv-deploiement-storage-joseph-nathan-v2"
+    bucket = "cv-deploiement-storage-joseph-nathan-v3"
 
     tags = {
          Name        = "Ma boite de stockage"
