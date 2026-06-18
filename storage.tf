@@ -10,7 +10,7 @@ resource "aws_s3_bucket" "boite_cv" {
 resource "aws_s3_object" "depot_html" {
     bucket       = aws_s3_bucket.boite_cv.id
     key          = "index.html"
-    source       = "C:/Users/badil/Documents/formation-cloud-finops/index.html"
+    source       = "${path.module}/index.html"
     content_type = "text/html"
 
     tags = {
@@ -21,7 +21,7 @@ resource "aws_s3_object" "depot_html" {
 resource "aws_s3_object" "depot_css" {
     bucket       = aws_s3_bucket.boite_cv.id
     key          = "style.css"
-    source       = "C:/Users/badil/Documents/formation-cloud-finops/style.css"
+    source       = "${path.module}/style.css"
     content_type = "text/css"
 
     tags = {
@@ -32,7 +32,7 @@ resource "aws_s3_object" "depot_css" {
 resource "aws_s3_object" "depot_image" {
     bucket       = aws_s3_bucket.boite_cv.id
     key          = "image_site/ma_tete.jpeg"
-    source       = "C:/Users/badil/Documents/formation-cloud-finops/image_site/ma_tete.jpeg"
+    source       = "${path.module}/image_site/ma_tete.jpeg"
     content_type = "image/jpeg"
 
     tags = {
