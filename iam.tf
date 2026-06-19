@@ -1,5 +1,5 @@
 resource "aws_iam_role" "role_serveur_cv" {
-    name        = "role-serveur-cv-joseph-v3" 
+    name        = "role-serveur-cv-joseph" 
     description = "Autorisation de lecture du serveur s3"
 
     assume_role_policy = jsonencode({
@@ -16,7 +16,7 @@ resource "aws_iam_role" "role_serveur_cv" {
     })
 }
 
-resource "aws_iam_policy" "politique_lecture_s3" {
+resource "aws_iam_policy" "politique_lecture" {
     name        = "politique-de-lecture-boite_cv"
     description = "Lecture de la boite s3"
 
@@ -40,7 +40,7 @@ resource "aws_iam_policy" "politique_lecture_s3" {
 
 resource "aws_iam_role_policy_attachment" "liaison_role_policy" {
     role        = aws_iam_role.role_serveur_cv.name
-    policy_arn  = aws_iam_policy.politique_lecture_s3.arn
+    policy_arn  = aws_iam_policy.politique_lecture.arn
 }
 
 resource "aws_iam_instance_profile" "profil_serveur_cv" {
